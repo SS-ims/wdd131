@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Color Palette */
+:root {
+    --silver: #c1c2c2ff;
+    --dark-goldenrod: #b08f09ff;
+    --dark-moss-green: #49540aff;
+    --persian-orange: #e58b4eff;
+    --dark-green: #091b0aff;
+}
+body {
+    display: grid;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    grid-template: auto 1fr auto;
+}
+main {
+    display:flex;
+    max-width: 840px;
+}
+
+span#course-title {
+    display: block;
+}
+span h1{
+    background-color: var(--dark-green);
+    color: var(--dark-goldenrod);
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    padding: 0.9em;
+    text-align: center;
+}
+span nav ul {
+    list-style: none;
+    text-decoration: none;
+    background-color: var(--dark-goldenrod);
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+    padding: 0.5em;
+    margin-bottom: 10px;
+}
+span nav ul li a {
+    text-decoration: none;
+    color: var(--silver);
+    font-weight: bold;
+}
+span nav ul li a:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+h1{
+    font-family: 'Arial Narrow', sans-serif;
+    font-style: italic;
+}
+.cardL{
+    background-color: var(--persian-orange);
+    grid-column: 1/2;
+    border: 1px var(--dark-green) solid;
+    border-radius: 0.5em;
+}
+.cardL p{
+    font-size: smaller;
+    padding: 0.2em;
+}
+.content{
+    display: flex;
+    text-align: justify;
+    gap: 2em;
+    line-height: 1.5em
+}
+.content img{
+    border: 1px solid var(--dark-green);
+    height: auto;
+    width: 90px;
+    margin: 10px;
+}
+.location-details{
+    display: flex;
+    text-align: justify;
+    gap: 2em;
+    line-height: 1.5em
+}
+.location-details img{
+    border: 1px solid var(--dark-green);
+    height: auto;
+    width: 100px;
+    margin: 5px;
+}
+.cardR{
+    background-color: var(--persian-orange);
+    grid-column: 2/3;
+    border: 1px var(--dark-green) solid;
+    border-radius: 0.5em;
+}
+.cardR ul li{
+    align-items: right;
+    
+    padding: 0.5em;
+
+}
+h2{
+    text-align: center;
+    background-color: var(--dark-green);
+    color: var(--dark-goldenrod);
+}
