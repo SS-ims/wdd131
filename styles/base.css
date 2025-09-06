@@ -109,14 +109,15 @@ h1{
 .card ul li{
     
     flex: 1;
-    text-align: justify;
+    
+    text-anchor: middle;
     list-style-position: inside;
     padding-left: 20px;
-    padding-top: 5px;
+    padding-top: 20px;
 
 }
 .card ul li a {
-    
+
     font-size: 12px;
     text-decoration: none;
     color: var(--dark-green);
@@ -135,7 +136,7 @@ footer{
     line-height: 1.5rem;
     max-width: 840px;
     text-align: center;
-    
+
 }
 
 main > .card:first-child {
