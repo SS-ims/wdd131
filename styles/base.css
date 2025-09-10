@@ -58,6 +58,9 @@ h1{
     font-family: 'Arial Narrow', sans-serif;
     font-style: italic;
 }
+h1 span{
+    color: var(--persian-orange);
+}
 .card{
     background-color: var(--persian-orange);
 
@@ -81,21 +84,24 @@ h1{
     line-height: 1.5em
 }
 .content img{
-    border: 1px transparent var(--dark-green);
+    border: 1px solid var(--dark-green);
+    border-radius: 5%;
     height: auto;
     width: 90px;
-    margin: 10px;
+    margin: 5px;
 }
 .location-details{
     display: flex;
     text-align: justify;
     gap: 2em;
     line-height: 1.5em
+    
 }
 .location-details img{
     border: 1px solid var(--dark-green);
+    border-radius: 5%;
     height: auto;
-    width: 100px;
+    width: 150px;
     margin: 5px;
 }
 .card{
@@ -105,11 +111,16 @@ h1{
     
     border: 1px var(--dark-green) solid;
     border-radius: 0.5em;
+
+}
+.card ul {
+    margin-top: 4em;
+
 }
 .card ul li{
     
     flex: 1;
-    
+    list-style: none;
     text-anchor: middle;
     list-style-position: inside;
     padding-left: 20px;
