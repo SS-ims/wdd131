@@ -20,6 +20,9 @@ border: 1px solid rgb(17, 17, 56);
 padding: 1rem;
 background-color: rgb(148, 148, 226);
 }
+h1{
+    text-align: center;
+}
 main{
     display: grid;
     grid-template-columns: 1fr;
