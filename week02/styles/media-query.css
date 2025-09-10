@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto" ,sans-serif;
+    font-size: 16px;
+
+}
+
+    
+
+header ,main ,footer{
+max-width: 640px;
+text-align: center;
+margin: 1rem auto;
+border: 1px solid rgb(17, 17, 56);
+padding: 1rem;
+background-color: rgb(148, 148, 226);
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+
+}
+section{
+    background-color: azure;
+    padding: 10px;
+}
