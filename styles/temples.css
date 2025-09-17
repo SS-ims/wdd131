@@ -49,9 +49,12 @@ header{
     display: block;
 }
 .navigation a {
+
     display: block;
+    text-align: center;
     text-decoration:none;
     color: #ffffff;
+
 }
 .navigation a:hover {
     border: 1px;
@@ -61,6 +64,10 @@ header{
 }
 .active::before{
     content: "♦";
+    color: yellow;
+    position: relative;
+    left: -1rem;
+    bottom: -1.6rem;
 }
 h1{
     text-align: left;
