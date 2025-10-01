@@ -1,0 +1,206 @@
+/* styles.css - clean, responsive, accessible styling */
+
+/* Base / reset-ish */
+:root{
+  --brand: #0b6623;
+  --accent: #f2b705;
+  --muted: #6b6b6b;
+  --bg: #ffffff;
+  --card-bg: rgba(255,255,255,0.9);
+  --max-width: 1100px;
+  --radius: 10px;
+  --focus: 3px solid rgba(11,102,35,0.25);
+  --base-font: 16px;
+}
+
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  font-size:var(--base-font);
+  color:#111;
+  background: linear-gradient(180deg,#f7fbf7 0%, #eaf5ea 100%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:1.25rem auto;
+  padding:1rem;
+}
+
+/* Header / Nav */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+}
+.site-brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+  color:var(--brand);
+}
+.site-brand img{
+  width:48px;
+  height:48px;
+  border-radius:8px;
+  box-shadow:0 4px 8px rgba(0,0,0,0.12);
+}
+.site-title{
+  font-weight:700;
+  font-size:1.25rem;
+}
+.main-nav{
+  display:flex;
+  gap:.5rem;
+}
+.main-nav a{
+  padding:.5rem .75rem;
+  border-radius:8px;
+  text-decoration:none;
+  color:var(--brand);
+}
+.main-nav a[aria-current="page"]{
+  background:var(--brand);
+  color:white;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+
+/* Layout */
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:1rem;
+  margin-top:1rem;
+}
+
+/* Card / sections */
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:1rem;
+  box-shadow:0 6px 18px rgba(9,20,14,0.06);
+  position:relative;
+}
+
+/* H2 styling (green bar with right-floating icon) */
+.card h2{
+  margin:0 0 .75rem 0;
+  font-size:1.15rem;
+  color: white;
+  background: var(--brand);
+  padding: .5rem .75rem;
+  border-radius: calc(var(--radius) - 4px);
+  position:relative; /* parent for absolutely positioned img */
+}
+.card h2 img{
+  position:absolute;
+  right:.6rem;
+  top:.35rem;
+  width:36px;
+  height:36px;
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Squad list */
+.squad-list{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:.75rem;
+}
+.squad-card{
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+  padding:.5rem;
+  border-radius:8px;
+  background:linear-gradient(180deg, #fff 0%, #fbfdfb 100%);
+  border:1px solid rgba(11,102,35,0.06);
+}
+.squad-card img.avatar{
+  width:64px;
+  height:64px;
+  border-radius:8px;
+  flex-shrink:0;
+}
+.squad-meta{
+  flex:1;
+}
+.squad-meta h3{
+  margin:0;
+  font-size:1rem;
+}
+.squad-meta p{margin:.25rem 0 0 0;color:var(--muted);font-size:.9rem}
+.btn{
+  display:inline-block;
+  padding:.45rem .6rem;
+  border-radius:8px;
+  border:0;
+  background:var(--brand);
+  color:white;
+  cursor:pointer;
+  font-weight:600;
+  text-decoration:none;
+  font-size:.9rem;
+}
+.btn.secondary{
+  background:transparent;
+  color:var(--brand);
+  border:1px solid rgba(11,102,35,0.12);
+}
+
+/* Contact form */
+.form-row{display:grid;gap:.5rem;margin-bottom:.5rem}
+label{font-weight:600;font-size:.92rem}
+input[type="text"], input[type="email"], textarea, select{
+  padding:.5rem;
+  border-radius:6px;
+  border:1px solid #d6d6d6;
+  font-size:1rem;
+  width:100%;
+}
+input:focus, textarea:focus, select:focus{outline:none; box-shadow:var(--focus)}
+textarea{min-height:120px;resize:vertical}
+
+/* small text / footer */
+.small{font-size:.87rem;color:var(--muted)}
+
+/* Responsive layout */
+@media (min-width:700px){
+  .grid{
+    grid-template-columns: 2fr 1fr;
+    align-items:start;
+  }
+  .squad-list{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width:1100px){
+  .container{padding:1.5rem}
+  .squad-list{grid-template-columns: repeat(3,1fr)}
+}
+
+/* Accessibility helpers */
+a:focus, button:focus { outline-offset:3px }
+
+/* util: visually hidden for accessibility */
+.visually-hidden{
+  position: absolute!important;
+  height:1px; width:1px; overflow:hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space:nowrap;
+}
+
+/* Small footer area inside right column */
+.side-spot{
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
