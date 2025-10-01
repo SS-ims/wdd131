@@ -21,7 +21,15 @@
         </h1>
     </header>
     <main>
-        <img class = "hero" src="images/vic-falls-large.webp" alt="the view of the majestic victoria falls">
+        <picture>
+            <source srcset = "images\vic-falls-large.webp" media = "(min-width: 1200px)">
+            
+            <source srcset ="images\vic-falls-medium.jpg" media = "(min-width: 800px)">
+
+            <source srcset = "images\vic-falls-small.jpg" media = "(min-width: 400px) ">
+            
+            <img class = "hero" src="images/vic-falls-small.jpg" alt="the view of the majestic victoria falls">
+        </picture>
         <section>
             <article class="intro">
                 <h2>Data</h2>
@@ -39,8 +47,11 @@
         </section>
         <section>
             <article class = "weather">
-                <h2>Weather </h2>
-                <img src="" alt="">
+                <div>
+                <h2 >Weather </h2>
+                <img src="images/cloudy_weather_icon.svg" width = 50 alt="partly cloudy">
+                </div>
+                
                 <ul>
                     <li>Temperature : 18°C</li>
                     <li>Conditions : Partly Cloudy</li>
