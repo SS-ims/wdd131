@@ -1,7 +1,7 @@
 body {
   font-family: 'Saira', sans-serif;
   background-color: #f5f2f7;
-  color: #2e1a3e;
+  color: #450a0a;
   margin: 0;
   padding: 0;
 }
@@ -68,7 +68,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #ac5b83;
 }
+p {
+    font-size: 0.9em;
+    line-height: 1.4em;
+    color: #450a0a;
+    background-color:#ac5b83;
 
+}
 footer {
   text-align: center;
   background-color:  #450a0a;
