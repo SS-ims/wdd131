@@ -1,0 +1,79 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f2f7;
+  color: #2e1a3e;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3b0a45;
+  color: white;
+  text-align: center;
+  padding: 1.5em 0;
+}
+
+main {
+  max-width: 600px;
+  background-color: #e6ddeb;
+  margin: 2em auto;
+  padding: 1.5em;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label, legend {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+select, input[type="text"], input[type="date"], textarea {
+  width: 100%;
+  padding: 0.6em;
+  margin-top: 0.5em;
+  border: 1px solid #999;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.rating label {
+  display: inline-block;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  margin: 1em 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 0.8em;
+  background-color: #3b0a45;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1em;
+  margin-top: 1.5em;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #5d1f70;
+}
+
+footer {
+  text-align: center;
+  background-color: #3b0a45;
+  color: white;
+  padding: 1em 0;
+  margin-top: 2em;
+  font-size: 0.9em;
+}
