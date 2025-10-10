@@ -1,4 +1,4 @@
-/* script.js - shared JS for all pages
+/*
    - uses template literals exclusively for building DOM output strings
    - uses localStorage
    - lazy-loads optimized SVG avatars generated at runtime
