@@ -88,6 +88,9 @@ if (reviewForm) {
 
                    });
 
+// Call displayReviewCount when the page loads
+document.addEventListener("DOMContentLoaded", displayReviewCount);                       
+
 // Display last modified date in footer
 document.getElementById("lastModified").textContent =
   "Last Modification: " + document.lastModified;
