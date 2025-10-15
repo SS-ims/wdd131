@@ -1,0 +1,91 @@
+/* LodgeSync Africa - Minimal Earthy Style */
+
+:root {
+  --brown: #4E342E;
+  --gold: #C6A664;
+  --cream: #FAF3E0;
+  --black: #1C1C1C;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cream);
+  color: var(--black);
+  margin: 0;
+  line-height: 1.6;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  color: var(--brown);
+}
+
+.header {
+  text-align: center;
+  background-color: var(--brown);
+  color: var(--cream);
+  padding: 2rem;
+  border-bottom: 4px solid var(--gold);
+}
+
+.subtitle {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.content {
+  margin-bottom: 2rem;
+  background: var(--cream);
+  padding: 1.5rem;
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+.color-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+.color-box.brown { background-color: var(--brown); }
+.color-box.gold { background-color: var(--gold); }
+.color-box.cream { background-color: var(--cream); border: 1px solid var(--brown); }
+.color-box.black { background-color: var(--black); }
+
+footer {
+  background-color: var(--black);
+  color: var(--cream);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
