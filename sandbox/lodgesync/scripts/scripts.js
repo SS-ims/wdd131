@@ -155,13 +155,13 @@ handleForm("contactForm", "contact_submissions", [
 ]);
 
 handleForm("registerForm", "lodge_registrations", [
-  "Owner-name",
-  "Email",
-  "Phone",
-  "Lodge-name",
-  "Location",
-  "Rooms",
-  "Description",
+  "owner-name",
+  "email", 
+  "phone",
+  "lodge-name",
+  "location",
+  "rooms",
+  "description",
 ]);
 
 handleForm("bookingForm", "booking_requests", [
@@ -171,4 +171,87 @@ handleForm("bookingForm", "booking_requests", [
   "Name",
   "Email",
 ]);
+
+// =====================================================
+//  LODGE FILTERING FUNCTIONALITY
+// =====================================================
+
+function filterLodges() {
+  const filterForm = document.querySelector('.filter-form');
+  if (!filterForm) return;
+
+  const searchInput = filterForm.querySelector('input[type="text"]');
+  const regionSelect = filterForm.querySelector('select:nth-of-type(1)');
+  const priceSelect = filterForm.querySelector('select:nth-of-type(2)');
+  const lodgeCards = document.querySelectorAll('.lodge-card');
+
+  function performFilter() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedRegion = regionSelect.value;
+    const selectedPriceRange = priceSelect.value;
+
+    lodgeCards.forEach(card => {
+      const lodgeName = card.querySelector('h3').textContent.toLowerCase();
+      const location = card.querySelector('.location').textContent.toLowerCase();
+      const priceText = card.querySelector('.price').textContent;
+      const priceValue = parseInt(priceText.replace(/[^0-9]/g, ''));
+
+      // Check search term
+      const matchesSearch = lodgeName.includes(searchTerm) || location.includes(searchTerm);
+
+      // Check region (simplified - you may need to adjust based on your data structure)
+      let matchesRegion = true;
+      if (selectedRegion) {
+        matchesRegion = location.includes(getRegionKeyword(selectedRegion));
+      }
+
+      // Check price range
+      let matchesPrice = true;
+      if (selectedPriceRange) {
+        switch (selectedPriceRange) {
+          case 'low':
+            matchesPrice = priceValue >= 50 && priceValue <= 100;
+            break;
+          case 'mid':
+            matchesPrice = priceValue > 100 && priceValue <= 200;
+            break;
+          case 'high':
+            matchesPrice = priceValue > 200;
+            break;
+        }
+      }
+
+      // Show or hide the card
+      if (matchesSearch && matchesRegion && matchesPrice) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function getRegionKeyword(region) {
+    const regionMap = {
+      'southern': 'zimbabwe|botswana|south africa|zambia',
+      'eastern': 'kenya|tanzania|uganda|ethiopia',
+      'western': 'ghana|nigeria|senegal|mali',
+      'northern': 'egypt|morocco|tunisia|algeria'
+    };
+    return regionMap[region] || '';
+  }
+
+  // Add event listeners
+  searchInput.addEventListener('input', performFilter);
+  regionSelect.addEventListener('change', performFilter);
+  priceSelect.addEventListener('change', performFilter);
+
+  // Handle form submission
+  filterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    performFilter();
+  });
+}
+
+// Initialize filtering when page loads
+document.addEventListener('DOMContentLoaded', filterLodges);
 
