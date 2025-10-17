@@ -27,8 +27,7 @@ const products = [
   }
 ];
 
-// Populate select dropdown dynamically
-const productSelect = document.getElementById("product");
+let productSelect = document.getElementById("product");
 products.forEach(product => {
   const option = document.createElement("option");
   option.value = product.name;
@@ -77,19 +76,19 @@ if (reviewForm) {
 // Call displayReviewCount when the page loads
 //document.addEventListener("DOMContentLoaded", displayReviewCount);
 
-  document.addEventListener("DOMContentLoaded", function() {
-                let reviewCount = localStorage.getItem('reviewCount');
-                if (reviewCount !== null) {
-                    document.getElementById("reviewCount").textContent = `Reviews completed: ${reviewCount}`;
-                } else {
-                    document.getElementById("reviewCount").textContent = "Reviews completed: 0";
-                }
+document.addEventListener("DOMContentLoaded", function() {
+              let reviewCount = localStorage.getItem('reviewCount');
+              if (reviewCount !== null) {
+                  document.getElementById("reviewCount").textContent = `Reviews completed: ${reviewCount}`;
+              } else {
+                  document.getElementById("reviewCount").textContent = "Reviews completed: 0";
+              }
 
 
-                   });
+                 });
 
 // Call displayReviewCount when the page loads
-document.addEventListener("DOMContentLoaded", displayReviewCount);                       
+document.addEventListener("DOMContentLoaded", displayReviewCount);
 
 // Display last modified date in footer
 document.getElementById("lastModified").textContent =

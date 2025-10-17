@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover Savanna Escape Lodge — an authentic African experience with LodgeSync Africa.">
+  <title>Savanna Escape Lodge | LodgeSync Africa</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <h1 class="loader-logo">LodgeSync<span>Africa</span></h1>
+      <div class="loader-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">LodgeSync<span>Africa</span></div>
+    <div class="menu-btn">☰</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="lodges.html">Lodges</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero lodge-hero">
+    <div class="hero-content">
+      <h1>Savanna Escape Lodge</h1>
+      <p>Hwange, Zimbabwe — Nature, Serenity & Authentic African Hospitality</p>
+    </div>
+  </section>
+
+  <!-- Lodge Info Section -->
+  <section class="lodge-details fade-up">
+    <div class="details-container">
+      <div class="details-text">
+        <h2>About Savanna Escape Lodge</h2>
+        <p>
+          Nestled on the edge of Hwange National Park, Savanna Escape Lodge offers guests a rare blend of
+          comfort and wilderness. Our spacious chalets overlook the African savanna, where elephants roam
+          freely at dusk and the sound of nature serenades you to sleep.
+        </p>
+        <ul class="amenities">
+          <li>🏕️ 12 luxury chalets with private decks</li>
+          <li>🍽️ On-site restaurant serving local cuisine</li>
+          <li>🔥 Outdoor fireplace & stargazing area</li>
+          <li>🦓 Guided safari tours and nature walks</li>
+          <li>🌐 Free Wi-Fi & shuttle service</li>
+        </ul>
+        <p class="price"><strong>Price:</strong> $120 / night</p>
+      </div>
+
+      <div class="details-image">
+        <img src="images/lodge1.jpg" alt="Savanna Escape Lodge">
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section class="gallery fade-up">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/lodge1.jpg" alt="Lodge view">
+      <img src="images/lodge2.jpg" alt="Chalet interior">
+      <img src="images/lodge3.jpg" alt="Dining area">
+      <img src="images/lodge4.jpg" alt="Safari experience">
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking fade-up">
+    <h2>Book Your Stay</h2>
+    <form action="#" method="post" class="booking-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="checkin">Check-in Date</label>
+          <input type="date" id="checkin" name="checkin" required>
+        </div>
+        <div class="form-group">
+          <label for="checkout">Check-out Date</label>
+          <input type="date" id="checkout" name="checkout" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="guests">Number of Guests</label>
+          <input type="number" id="guests" name="guests" min="1" max="10" required>
+        </div>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <button type="submit" class="btn">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!-- Map -->
+  <section class="map fade-up">
+    <h2>Location</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.183915569852!2d27.0078!3d-18.6231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18ee333ad048d36f%3A0x9a34efb32b90d81f!2sHwange%20National%20Park!5e0!3m2!1sen!2s!4v1696500000000"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 LodgeSync Africa | All Rights Reserved</p>
+    <div class="socials">
+      <a href="#">Facebook</a> |
+      <a href="#">Instagram</a> |
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+</body>
+</html>
