@@ -190,9 +190,15 @@ nav a.active {
   color: white;
 }
 
+.cta p {
+  margin-bottom: 1.5rem;
+}
+
 .cta .btn {
   background-color: #ffb300;
   color: #004d40;
+  margin-top: 1rem;
+  display: inline-block;
 }
 
 .cta .btn:hover {
