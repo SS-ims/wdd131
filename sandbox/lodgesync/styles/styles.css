@@ -26,6 +26,14 @@ header {
 .logo {
   font-size: 1.6rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
 }
 
 .logo span {
