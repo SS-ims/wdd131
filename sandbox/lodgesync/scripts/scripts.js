@@ -255,3 +255,15 @@ function filterLodges() {
 // Initialize filtering when page loads
 document.addEventListener('DOMContentLoaded', filterLodges);
 
+// =====================================================
+//  LAST MODIFIED DATE FUNCTIONALITY
+// =====================================================
+
+// Display last modified date in footer
+document.addEventListener('DOMContentLoaded', function() {
+  const lastModifiedElem = document.getElementById('lastModified');
+  if (lastModifiedElem) {
+    lastModifiedElem.textContent = 'Last Modified: ' + document.lastModified;
+  }
+});
+
