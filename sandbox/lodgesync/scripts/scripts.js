@@ -93,3 +93,82 @@ const revealOnScroll = () => {
 
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll(); // Run once on load
+
+// =====================================================
+//  FORM VALIDATION + LOCAL STORAGE + CSV EXPORT
+// =====================================================
+
+function handleForm(formId, storageKey, csvHeaders) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Collect form data
+    const formData = new FormData(form);
+    const dataObj = {};
+    formData.forEach((value, key) => (dataObj[key] = value.trim()));
+
+    // Simple validation check
+    for (const [key, val] of Object.entries(dataObj)) {
+      if (!val) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+    }
+
+    // Store in localStorage
+    const existing = JSON.parse(localStorage.getItem(storageKey)) || [];
+    existing.push(dataObj);
+    localStorage.setItem(storageKey, JSON.stringify(existing));
+
+    // Create CSV data string
+    const csvRows = [];
+    csvRows.push(csvHeaders.join(","));
+    existing.forEach((entry) => {
+      const row = csvHeaders.map((h) => `"${entry[h.toLowerCase()] || ""}"`);
+      csvRows.push(row.join(","));
+    });
+    const csvContent = csvRows.join("\n");
+
+    // Create download link
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${storageKey}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+
+    // Reset form and confirm
+    form.reset();
+    alert("✅ Form submitted successfully! Data saved locally and CSV downloaded.");
+  });
+}
+
+// Apply to each form type
+handleForm("contactForm", "contact_submissions", [
+  "Name",
+  "Email",
+  "Message",
+]);
+
+handleForm("registerForm", "lodge_registrations", [
+  "Owner-name",
+  "Email",
+  "Phone",
+  "Lodge-name",
+  "Location",
+  "Rooms",
+  "Description",
+]);
+
+handleForm("bookingForm", "booking_requests", [
+  "Checkin",
+  "Checkout",
+  "Guests",
+  "Name",
+  "Email",
+]);
+
