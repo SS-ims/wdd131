@@ -1,0 +1,11 @@
+:root{--deep:#2e0830;--card-bg:#fff;--muted:#333}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI', Roboto, Arial, sans-serif;background:#fff;color:#111}
+.masthead{background:var(--deep);color:#fff;padding:1.25rem;text-align:center}
+main{max-width:900px;margin:0 auto;padding:1rem}
+.confirmation-card{background:#f6f6f8;padding:1.25rem;border-radius:8px}
+.byline{color:var(--muted)}
+#details{margin-top:1rem}
+#details dl{display:grid;grid-template-columns:200px 1fr;gap:0.5rem 1rem}
+#counter{margin-top:1rem;font-weight:700}
+.site-footer{background:var(--deep);color:white;text-align:center;padding:1rem;margin-top:1rem}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Submitted — Confirmation</title>
+<link rel="stylesheet" href="styles/review.css">
+<script src="scripts/review.js" defer></script>
+</head>
+<body>
+<header class="masthead confirmation-head">
+<h1>Thank you!</h1>
+</header>
+
+
+<main>
+<section class="confirmation-card">
+<p class="byline">Author: <strong>Solomon Sakala</strong> — Zimbabwe</p>
+<h2>Review submitted successfully</h2>
+<p>We received your review — here are the details you submitted:</p>
+
+
+<div id="details"></div>
+
+
+<p id="counter">You have submitted <strong id="count">0</strong> review(s) from this browser.</p>
+
+
+<p><a href="form.html">Submit another review</a></p>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<p>©<span id="year"></span> Solomon Sakala 🌺 Zimbabwe</p>
+<p class="lastmod">Last Modification: <span id="lastmod"></span></p>
+</footer>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastmod').textContent = document.lastModified || '—';
+</script>
+</body>
+</html>

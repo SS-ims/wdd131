@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Review — Solomon Sakala</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <h1>Product Review</h1>
+  </header>
+
+  <main>
+    <form id="reviewForm" class="review-card" method="get" action="review.html" novalidate>
+      <div class="form-inner">
+        <p class="byline">Author: <strong>Solomon Sakala</strong> — Zimbabwe</p>
+
+        <label for="product" class="label-large">Product Name</label>
+        <select id="product" name="product" required aria-required="true">
+          <option value="" disabled selected>Choose a Product ...</option>
+        </select>
+
+        <label class="label-large">Overall Rating</label>
+        <div class="rating-wrapper" role="radiogroup" aria-label="Overall rating">
+          <div class="stars">
+            <span class="star-label">☆</span>
+            <span class="star-label">☆☆</span>
+            <span class="star-label">☆☆☆</span>
+            <span class="star-label">☆☆☆☆</span>
+            <span class="star-label">☆☆☆☆☆</span>
+          </div>
+
+          <div class="radios">
+            <div class="radio"><input type="radio" id="r5" name="rating" value="5" required><label for="r5"> </label></div>
+            <div class="radio"><input type="radio" id="r4" name="rating" value="4"><label for="r4"> </label></div>
+            <div class="radio"><input type="radio" id="r3" name="rating" value="3"><label for="r3"> </label></div>
+            <div class="radio"><input type="radio" id="r2" name="rating" value="2"><label for="r2"> </label></div>
+            <div class="radio"><input type="radio" id="r1" name="rating" value="1"><label for="r1"> </label></div>
+          </div>
+        </div>
+
+        <label for="installDate" class="label-large">Date of Installation</label>
+        <input type="date" id="installDate" name="installDate" required>
+
+        <label class="label-large">Which features did you find useful in the product? <span class="muted">(Check all that apply)</span></label>
+        <div class="features">
+          <label><input type="checkbox" id="feat-dur" name="features" value="Durability"> Durability</label>
+          <label><input type="checkbox" id="feat-ease" name="features" value="Ease of Use"> Ease of Use</label>
+          <label><input type="checkbox" id="feat-perf" name="features" value="Performance"> Performance</label>
+          <label><input type="checkbox" id="feat-design" name="features" value="Design"> Design</label>
+        </div>
+
+        <label for="writtenReview" class="label-large">Written Review <span class="muted">(Optional)</span></label>
+        <textarea id="writtenReview" name="writtenReview" rows="6" placeholder="Write your review..."></textarea>
+
+        <label for="username" class="label-large">Your Name <span class="muted">(Optional)</span></label>
+        <input type="text" id="username" name="username" autocomplete="name">
+
+        <div class="actions">
+          <input type="submit" value="Post Review" class="btn-primary">
+        </div>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>©<span id="year"></span> Solomon Sakala 🌺 Zimbabwe</p>
+    <p class="lastmod">Last Modification: <span id="lastmod"></span></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Last modification placeholder (will show the document lastModified if available in server)
+    document.getElementById('lastmod').textContent = document.lastModified || '—';
+  </script>
+</body>
+</html>
