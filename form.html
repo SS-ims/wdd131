@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Product Review by Solomon Sakala to evaluate the quality of a product">
+  <meta name="author" content="Solomon Sakala">
   <title>Product Review — Solomon Sakala</title>
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/form.js" defer></script>
+  <script src="scripts/getdate.js" defer></script>
 </head>
 <body>
   <header class="masthead">
@@ -19,7 +22,7 @@
 
         <label for="product" class="label-large">Product Name</label>
         <select id="product" name="product" required aria-required="true">
-          <option value="" disabled selected>Choose a Product ...</option>
+          <option value="" disabled selected>Select a Product ...</option>
         </select>
 
         <label class="label-large">Overall Rating</label>
@@ -34,10 +37,10 @@
 
           <div class="radios">
             <div class="radio"><input type="radio" id="r5" name="rating" value="5" required><label for="r5"> </label></div>
-            <div class="radio"><input type="radio" id="r4" name="rating" value="4"><label for="r4"> </label></div>
-            <div class="radio"><input type="radio" id="r3" name="rating" value="3"><label for="r3"> </label></div>
-            <div class="radio"><input type="radio" id="r2" name="rating" value="2"><label for="r2"> </label></div>
-            <div class="radio"><input type="radio" id="r1" name="rating" value="1"><label for="r1"> </label></div>
+            <div class="radio"><input type="radio" id="r4" name="rating" value="4" required><label for="r4"> </label></div>
+            <div class="radio"><input type="radio" id="r3" name="rating" value="3" required><label for="r3"> </label></div>
+            <div class="radio"><input type="radio" id="r2" name="rating" value="2" required><label for="r2"> </label></div>
+            <div class="radio"><input type="radio" id="r1" name="rating" value="1" required><label for="r1"> </label></div>
           </div>
         </div>
 
@@ -68,12 +71,8 @@
   <footer class="site-footer">
     <p>©<span id="year"></span> Solomon Sakala 🌺 Zimbabwe</p>
     <p class="lastmod">Last Modification: <span id="lastmod"></span></p>
+    <p id = "lastModified">  </p>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    // Last modification placeholder (will show the document lastModified if available in server)
-    document.getElementById('lastmod').textContent = document.lastModified || '—';
-  </script>
 </body>
 </html>
