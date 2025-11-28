@@ -1,3 +1,14 @@
+// Menu toggle functionality
+const menuButton = document.getElementById('menu-button');
+const navigation = document.querySelector('.navigation');
+
+if (menuButton && navigation) {
+    menuButton.addEventListener('click', () => {
+        menuButton.classList.toggle('open');
+        navigation.classList.toggle('open');
+    });
+}
+
 // Calculate and display windchill in the .weather box
 function calculateWindChill(temp, speed) {
   if (temp <= 50 && speed > 3) {

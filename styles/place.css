@@ -11,6 +11,59 @@ body{
     text-align: center;
     padding: 20px;
 }
+
+/* Navigation Menu Button */
+#menu-button{
+    font-size: 2rem;
+    border: 0;
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    background: none;
+    color: white;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+#menu-button::before{
+    content: "≡";
+}
+
+#menu-button.open::before{
+    content: "⚡";
+}
+
+/* Navigation Styles */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 500px;
+    list-style: none;
+    color: white;
+}
+
+.navigation li {
+    display: none;
+}
+
+.navigation.open li {
+    display: block;
+}
+
+.navigation a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+}
+
+.navigation a:hover {
+    border: 1px solid white;
+    font-size: larger;
+}
 main {
     width: 100%;
     max-width: 100%;
@@ -78,6 +131,7 @@ h1{
     border-bottom: rgba(245, 5, 5, 0.76) 10px solid;
     width: 100%; 
     padding: 10px 0;
+    position: relative;
 }
 footer{
     color: white;
@@ -190,5 +244,22 @@ footer p{
         right: 15px;
         top: 5px;
 
+    }
+
+    /* Horizontal navigation for larger screens */
+    #menu-button {
+        display: none;
+    }
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        max-width: none;
+        position: static;
+    }
+    .navigation li{
+        display: block;
+        margin: 0 1rem;
     }
 }
