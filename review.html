@@ -8,6 +8,7 @@
 <title>Review Submitted — Confirmation</title>
 <link rel="stylesheet" href="styles/review.css">
 <script src="scripts/review.js" defer></script>
+<script src="scripts/getdate.js" defer></script>
 </head>
 <body>
 <header class="masthead confirmation-head">
@@ -35,13 +36,7 @@
 
 <footer class="site-footer">
 <p>©<span id="year"></span> Solomon Sakala 🌺 Zimbabwe</p>
-<p class="lastmod">Last Modification: <span id="lastmod"></span></p>
+ <p id="lastModified"> </p>
 </footer>
-
-
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastmod').textContent = document.lastModified || '—';
-</script>
 </body>
 </html>
