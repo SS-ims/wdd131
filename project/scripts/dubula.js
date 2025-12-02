@@ -1,8 +1,3 @@
-// scripts/dubula.js
-// This file is loaded with `defer` from the head for all pages in the project.
-// Use this file for small page-level behaviors and to import other modules if needed.
-
-
 (function(){
 // Simple DOM-ready helper — when script is deferred the DOM is already parsed
 function init(){
