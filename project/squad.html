@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dubula FC — Squad</title>
+  <meta name="description" content="Meet the Dubula FC first team squad." />
+  <link rel="stylesheet" href="styles/dubula.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script defer src="scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Dubula FC logo" width="56" height="56">
+        <span class="brand-text">Dubula FC</span>
+      </a>
+
+      <nav class="navbar" id="nav">
+        <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false">☰</button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="squad.html" class="active">Squad</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">First Team Squad</h2>
+        <p class="section-sub">Click a player to view details.</p>
+
+        <div class="team-grid" id="teamGrid">
+          <!-- Player cards -->
+          <article class="player-card" data-player="jmoyo">
+            <img src="assets/images/player-1.jpg" alt="J. Moyo" width="400" height="500" loading="lazy">
+            <div class="player-info">
+              <h3>J. Moyo</h3>
+              <p class="position">Forward — #9</p>
+            </div>
+          </article>
+
+          <article class="player-card" data-player="adube">
+            <img src="assets/images/player-2.jpg" alt="A. Dube" width="400" height="500" loading="lazy">
+            <div class="player-info">
+              <h3>A. Dube</h3>
+              <p class="position">Midfielder — #8</p>
+            </div>
+          </article>
+
+          <article class="player-card" data-player="ssakala">
+            <img src="assets/images/player-3.jpg" alt="S. Sakala" width="400" height="500" loading="lazy">
+            <div class="player-info">
+              <h3>S. Sakala</h3>
+              <p class="position">Goalkeeper — #1</p>
+            </div>
+          </article>
+
+          <!-- Add more player cards as needed -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Player detail modal (simple) -->
+    <div id="playerModal" class="modal" hidden aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+        <h3 id="modalTitle">Player name</h3>
+        <p id="modalPos">Position — #</p>
+        <p id="modalBio">Player bio and stats will appear here.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Dubula Football Club — All rights reserved.</p>
+      <ul class="social">
+        <li><a href="#">FB</a></li>
+        <li><a href="#">TW</a></li>
+        <li><a href="#">IG</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dubula FC — Home</title>
+  <meta name="description" content="Dubula Football Club — fixtures, squad, shop and news." />
+  <link rel="stylesheet" href="styles/dubula.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <script defer src="scripts/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.png" alt="Dubula FC logo" width="56" height="56">
+        <span class="brand-text">Dubula FC</span>
+      </a>
+
+      <nav class="navbar" id="nav">
+        <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false">
+          <span class="sr-only">Open menu</span>☰
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="squad.html">Squad</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="references.html">References</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Dubula Football Club</h1>
+          <p class="lead">Pride. Passion. Performance — follow the season's fixtures, squad updates and club store.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="squad.html">Meet the Squad</a>
+            <a class="btn ghost" href="#fixtures">Fixtures</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="assets/images/stadium-hero.jpg" alt="Dubula FC stadium" width="900" height="600" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="fixtures" class="section section--muted">
+      <div class="container">
+        <h2 class="section-title">Upcoming Fixtures</h2>
+        <div class="fixtures-grid" id="fixturesList">
+          <article class="fixture-card">
+            <div class="fixture-date">Sat, Jan 10</div>
+            <div class="fixture-teams">
+              <span class="home">Dubula FC</span>
+              <span class="versus">v</span>
+              <span class="away">Harbourside United</span>
+            </div>
+            <div class="fixture-venue">Home — Dubula Stadium</div>
+          </article>
+
+          <article class="fixture-card">
+            <div class="fixture-date">Wed, Jan 14</div>
+            <div class="fixture-teams">
+              <span class="home">Orange City</span>
+              <span class="versus">v</span>
+              <span class="away">Dubula FC</span>
+            </div>
+            <div class="fixture-venue">Away — Orange City Arena</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Club Shop</h2>
+        <div class="shop-grid">
+          <div class="product-card">
+            <img src="assets/images/shirt-home.jpg" alt="Home shirt" width="400" height="300" loading="lazy">
+            <h3>Home Shirt 2025</h3>
+            <p class="price">USD 34.99</p>
+            <a class="btn" href="contact.html">Pre-order</a>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/images/scarf.jpg" alt="Club scarf" width="400" height="300" loading="lazy">
+            <h3>Club Scarf</h3>
+            <p class="price">USD 12.00</p>
+            <a class="btn" href="contact.html">Buy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Dubula Football Club — All rights reserved.</p>
+      <ul class="social">
+        <li><a href="#" aria-label="Facebook">FB</a></li>
+        <li><a href="#" aria-label="Twitter">TW</a></li>
+        <li><a href="#" aria-label="Instagram">IG</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
