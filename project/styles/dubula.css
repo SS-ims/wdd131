@@ -1,4 +1,3 @@
-/* styles.css — Dubula FC (dark green + gold theme) */
 :root{
   --bg:#07121a;
   --card:#0b1220;
@@ -23,6 +22,9 @@ body{
   line-height:1.45;font-size:16px;
 }
 
+/* Hide any element that uses the HTML hidden attribute */
+[hidden]{display:none !important;}
+
 /* Container */
 .container{
   width:calc(100% - 2rem);
@@ -38,20 +40,31 @@ body{
   background:linear-gradient(0deg, rgba(2,8,23,0.6), rgba(2,8,23,0.2));
   position:sticky;top:0;z-index:60;backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);
 }
-.header-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between}
+.header-inner{display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
 .brand{display:flex;gap:.75rem;align-items:center;text-decoration:none;color:var(--text)}
 .brand img{border-radius:8px}
 .brand-text{font-weight:800;font-size:1.15rem}
 
-/* Nav */
+/* Nav (desktop) */
 .navbar{display:flex;align-items:center}
-.nav-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--text);padding:.5rem .6rem;border-radius:8px;font-size:1rem}
-.nav-menu{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+.nav-toggle{
+  display:none;
+  background:transparent;border:1px solid rgba(255,255,255,0.05);
+  color:var(--text);padding:.5rem .6rem;border-radius:8px;font-size:1rem;
+  width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;
+}
+.nav-toggle:focus{outline:3px solid rgba(246,200,76,0.12)}
+
+.nav-menu{
+  display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;align-items:center;
+}
 .nav-menu a{color:var(--text);text-decoration:none;padding:.45rem .6rem;border-radius:8px;font-weight:700}
+.nav-menu a{border-left:1px solid rgba(255,255,255,0.04)}
+.nav-menu a:first-child{border-left:none}
 .nav-menu a:hover{background:var(--glass)}
 .nav-menu a.active{background:linear-gradient(90deg,var(--accent-2), rgba(246,200,76,0.15));color:#061014}
 
-/* Hero */
+/* Hero (unchanged) */
 .hero{padding:4rem 0 6rem}
 .hero-grid{display:grid;grid-template-columns:1fr 560px;gap:2rem;align-items:center}
 .hero-text h1{font-size:clamp(2rem,4.5vw,3rem);margin:0 0 .5rem}
@@ -70,57 +83,57 @@ body{
 .section-title{font-size:1.35rem;margin:0 0 .75rem}
 .section-sub{color:rgba(230,238,246,0.8);margin:0 0 1rem}
 
-/* Fixtures */
-.fixtures-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.fixture-card{background:var(--card);padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.fixture-date{font-weight:800;color:var(--accent-2)}
-.fixture-teams{display:flex;gap:.5rem;align-items:center;margin:.5rem 0;font-weight:700}
-.versus{opacity:.6}
-
 /* Team */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.player-card{background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+.player-card{background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.02);cursor:pointer;transition:transform 180ms ease, box-shadow 180ms ease}
+.player-card:focus, .player-card:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.45)}
 .player-card img{display:block;width:100%;height:auto}
 .player-info{padding:.75rem}
 .player-info h3{margin:.25rem 0}
 .position{opacity:.8;font-size:.95rem}
 
-/* Shop */
-.shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.product-card{background:var(--card);padding:1rem;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.03)}
-.product-card img{width:100%;height:auto;border-radius:8px;margin-bottom:.5rem}
-.price{font-weight:800;margin:0.5rem 0;color:var(--accent)}
-
-/* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.contact-card{background:var(--card);padding:1.15rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.form{display:flex;gap:.5rem;align-items:center}
-.form input[type="email"], .form input[type="text"], .form textarea, .form-vertical input, .form-vertical textarea{
-  width:100%;padding:.6rem .75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);margin-bottom:.5rem;
-}
-
-/* Vertical form */
-.form-vertical{display:flex;flex-direction:column}
-
 /* Footer */
 .site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1.25rem 0;background:transparent}
 .footer-grid{display:flex;gap:1rem;align-items:center;justify-content:space-between}
 
-/* References list */
-.references-list{list-style:disc;margin-left:1.25rem;color:rgba(230,238,246,0.9)}
-
-/* Modal */
-.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);padding:1rem}
-.modal-content{background:var(--card);padding:1.25rem;border-radius:12px;max-width:540px;width:100%;position:relative}
+/* Modal: center small dialog and keep the grid interactive while modal hidden */
+.modal{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(2,6,23,0.6);padding:1rem;z-index:120;
+}
+.modal-content{
+  background:var(--card);padding:1.25rem;border-radius:12px;max-width:620px;width:100%;position:relative;
+  box-shadow:var(--shadow);display:flex;gap:1rem;align-items:flex-start;
+}
 .modal-close{position:absolute;right:.5rem;top:.5rem;background:transparent;border:0;color:var(--text);font-size:1.1rem;cursor:pointer}
 
-/* small screens */
+/* modal image smaller so it doesn't dominate */
+.modal-player-img{width:160px;height:auto;border-radius:8px;object-fit:cover;flex-shrink:0}
+.modal-info{color:var(--muted);font-size:0.95rem}
+.modal-info h3{margin-top:0;color:var(--text)}
+
+/* Responsive adjustments */
 @media (max-width:880px){
   .hero-grid{grid-template-columns:1fr;gap:1.25rem}
-  .nav-toggle{display:inline-block}
-  .nav-menu{display:none;position:absolute;right:1rem;top:64px;background:var(--card);padding:.75rem;border-radius:10px;flex-direction:column;min-width:180px;box-shadow:var(--shadow)}
-  .nav-menu.show{display:flex}
+  .nav-toggle{display:inline-flex}
+  /* Make the menu part of the header flow so it pushes content down when opened */
+  .nav-menu{display:flex;flex-direction:column;width:100%;gap:0;padding:0;margin-top:.75rem;position:relative;background:transparent;border-radius:8px}
+  .nav-menu a{display:block;padding:.6rem 0;border-radius:8px}
+  /* Mobile: horizontal separators between stacked menu items */
+  .nav-menu a{border-bottom:1px solid rgba(255,255,255,0.04)}
+  .nav-menu a:last-child{border-bottom:none}
   .container{padding:1rem}
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{flex-direction:column;gap:.5rem;align-items:flex-start}
+
+  /* mobile behavior: hide nav by default (we use the hidden attr in HTML) */
+  .nav-menu[hidden]{display:none}
+  .nav-menu.show{display:flex}
+
+  /* close button styling when inserted */
+  .nav-close{display:none;background:transparent;border:0;color:var(--text);font-size:1.2rem;padding:.25rem;margin:.25rem;cursor:pointer}
+  .nav-menu.show .nav-close{display:block;align-self:flex-end}
 }
+
+/* Focus ring for keyboard users on modal close */
+.modal-close:focus{outline:3px solid rgba(246,200,76,0.16);border-radius:6px}

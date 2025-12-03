@@ -18,8 +18,9 @@
       </a>
 
       <nav class="navbar" id="nav">
-        <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false">☰</button>
-        <ul class="nav-menu" id="navMenu">
+        <button id="navToggle" class="nav-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Open menu">☰</button>
+        <ul class="nav-menu" id="navMenu" hidden>
+          <!-- mobile-only close button will be inserted dynamically -->
           <li><a href="index.html">Home</a></li>
           <li><a href="squad.html" class="active">Squad</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -36,32 +37,69 @@
         <p class="section-sub">Click a player to view details.</p>
 
         <div class="team-grid" id="teamGrid">
-          <!-- Player cards -->
-          <article class="player-card" data-player="jmoyo">
-            <img src="assets/images/player-1.jpg" alt="J. Moyo" width="400" height="500" loading="lazy">
+          <!-- Player cards: use images images/num1.jpg .. images/num11.jpg -->
+          <article class="player-card" data-player="player1" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num1.jpg" alt="Player 1" width="400" height="500" loading="lazy">
             <div class="player-info">
-              <h3>J. Moyo</h3>
-              <p class="position">Forward — #9</p>
+              <h3>Player 1</h3>
+              <p class="position">Position — #1</p>
             </div>
           </article>
 
-          <article class="player-card" data-player="adube">
-            <img src="assets/images/player-2.jpg" alt="A. Dube" width="400" height="500" loading="lazy">
+          <article class="player-card" data-player="player2" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num2.jpg" alt="Player 2" width="400" height="500" loading="lazy">
             <div class="player-info">
-              <h3>A. Dube</h3>
-              <p class="position">Midfielder — #8</p>
+              <h3>Player 2</h3>
+              <p class="position">Position — #2</p>
             </div>
           </article>
 
-          <article class="player-card" data-player="ssakala">
-            <img src="assets/images/player-3.jpg" alt="S. Sakala" width="400" height="500" loading="lazy">
-            <div class="player-info">
-              <h3>S. Sakala</h3>
-              <p class="position">Goalkeeper — #1</p>
-            </div>
+          <!-- ... player3 .. player11 (unchanged) -->
+          <article class="player-card" data-player="player3" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num3.jpg" alt="Player 3" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 3</h3><p class="position">Position — #3</p></div>
           </article>
 
-          <!-- Add more player cards as needed -->
+          <article class="player-card" data-player="player4" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num4.jpg" alt="Player 4" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 4</h3><p class="position">Position — #4</p></div>
+          </article>
+
+          <article class="player-card" data-player="player5" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num5.jpg" alt="Player 5" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 5</h3><p class="position">Position — #5</p></div>
+          </article>
+
+          <article class="player-card" data-player="player6" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num6.jpg" alt="Player 6" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 6</h3><p class="position">Position — #6</p></div>
+          </article>
+
+          <article class="player-card" data-player="player7" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num7.jpg" alt="Player 7" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 7</h3><p class="position">Position — #7</p></div>
+          </article>
+
+          <article class="player-card" data-player="player8" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num8.jpg" alt="Player 8" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 8</h3><p class="position">Position — #8</p></div>
+          </article>
+
+          <article class="player-card" data-player="player9" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num9.jpg" alt="Player 9" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 9</h3><p class="position">Position — #9</p></div>
+          </article>
+
+          <article class="player-card" data-player="player10" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num10.jpg" alt="Player 10" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 10</h3><p class="position">Position — #10</p></div>
+          </article>
+
+          <article class="player-card" data-player="player11" tabindex="0" role="button" aria-pressed="false">
+            <img src="images/num11.jpg" alt="Player 11" width="400" height="500" loading="lazy">
+            <div class="player-info"><h3>Player 11</h3><p class="position">Position — #11</p></div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -70,9 +108,18 @@
     <div id="playerModal" class="modal" hidden aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
-        <h3 id="modalTitle">Player name</h3>
-        <p id="modalPos">Position — #</p>
-        <p id="modalBio">Player bio and stats will appear here.</p>
+        <div class="modal-body">
+          <img id="modalImg" class="modal-player-img" src="" alt="Player photo" width="200" height="250">
+          <div class="modal-info">
+            <h3 id="modalTitle">Player name</h3>
+            <p id="modalPos">Position — #</p>
+            <p id="modalDOB"><strong>DOB:</strong> </p>
+            <p id="modalGames"><strong>Games:</strong> </p>
+            <p id="modalGoals"><strong>Goals:</strong> </p>
+            <p id="modalSpecialty"><strong>Specialty:</strong> </p>
+            <p id="modalBio">Player bio and stats will appear here.</p>
+          </div>
+        </div>
       </div>
     </div>
   </main>

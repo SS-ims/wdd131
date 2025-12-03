@@ -20,7 +20,14 @@ padding:32px;
 
 
 main{ max-width:900px; margin:0 auto; }
-.site-header{ display:flex; gap:16px; align-items:center; margin-bottom:24px; }
+.site-header{ display:flex; gap:16px; align-items:center; margin-bottom:24px; flex-wrap:wrap }
+.navbar{display:flex;align-items:center}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--text);padding:.4rem .6rem;border-radius:8px;font-size:1rem}
+.nav-menu{display:flex;gap:1rem;list-style:none;margin:0;padding:0}
+.nav-menu a{text-decoration:none;color:var(--text);padding:.35rem .6rem;border-radius:8px;font-weight:700}
+/* Desktop: subtle vertical separator between inline menu items */
+.nav-menu a{border-left:1px solid rgba(0,0,0,0.04)}
+.nav-menu a:first-child{border-left:none}
 .logo{ width:84px; height:84px; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; background:var(--soft); }
 
 
@@ -36,4 +43,21 @@ h1{ font-family: "Playfair Display", serif; color:var(--primary); font-size:28px
 
 
 /* Responsive */
-@media (max-width:560px){ body{ padding:18px; } }
+@media (max-width:560px){
+	body{ padding:18px; }
+	.nav-toggle{display:inline-block}
+	/* Mobile nav becomes part of header flow so it pushes content down */
+	.nav-menu{display:none;flex-direction:column;width:100%;gap:0;padding:0;margin-top:.6rem;position:relative}
+	.nav-menu.show{display:flex}
+	.nav-menu a{display:block;padding:.6rem 0}
+	/* Mobile: horizontal separators between stacked menu items */
+	.nav-menu a{border-bottom:1px solid rgba(0,0,0,0.06)}
+	.nav-menu a:last-child{border-bottom:none}
+
+	/* When menu is open hide the original hamburger */
+	.nav-toggle.open{display:none}
+
+	/* Close button inside menu */
+	.nav-close{display:none;background:transparent;border:0;color:var(--text);font-size:1.2rem;padding:.25rem;margin:.25rem;cursor:pointer}
+	.nav-menu.show .nav-close{display:block;align-self:flex-end}
+}
